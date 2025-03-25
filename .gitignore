@@ -1,0 +1,7 @@
+.direnv/
+*.pcap
+*.out
+*.o
+*.a
+*.so
+tmp/
