@@ -2,10 +2,15 @@
   pkgs ? import <nixpkgs> {},
 }:
 
-pkgs.mkShell {
+(pkgs.mkShell.override {
+  stdenv = pkgs.llvmPackages_20.stdenv;
+}) {
   nativeBuildInputs = with pkgs; [
     ltrace
     ghidra-bin
     strace
+    ropgadget
+    sshpass
+    python313
   ];
 }
