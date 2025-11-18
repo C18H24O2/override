@@ -3,7 +3,7 @@
 }:
 
 (pkgs.mkShell.override {
-  stdenv = pkgs.llvmPackages_20.stdenv;
+  stdenv = pkgs.llvmPackages_21.stdenv;
 }) {
   nativeBuildInputs = with pkgs; [
     ltrace
