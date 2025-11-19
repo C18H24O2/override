@@ -1,12 +1,12 @@
 bool auth(char *s, int a2)
 {
   int i;
-  int v4;
-  int v5;
+  int value;
+  int len;
 
   s[strcspn(s, "\n")] = 0;
-  v5 = strnlen(s, 32);
-  if ( v5 <= 5 )
+  len = strnlen(s, 32);
+  if ( len <= 5 )
     return 1;
   if ( ptrace(PTRACE_TRACEME, 0, 1, 0) == -1 )
   {
@@ -17,20 +17,20 @@ bool auth(char *s, int a2)
   }
   else
   {
-    v4 = (s[3] ^ 0x1337) + 6221293;
-    for ( i = 0; i < v5; ++i )
+    value = (s[3] ^ 0x1337) + 6221293;
+    for ( i = 0; i < len; ++i )
     {
       if ( s[i] <= 31 )
         return 1;
-      v4 += (v4 ^ (unsigned int)s[i]) % 0x539;
+      value += (value ^ (unsigned int)s[i]) % 0x539;
     }
-    return a2 != v4;
+    return a2 != value;
   }
 }
 
 int main(int argc, const char **argv, const char **envp)
 {
-  int v4;
+  int value;
   char s[28];
 
   puts("***********************************");
@@ -42,8 +42,8 @@ int main(int argc, const char **argv, const char **envp)
   puts("***** NEW ACCOUNT DETECTED ********");
   puts("***********************************");
   printf("-> Enter Serial: ");
-  scanf("%s", &v4);
-  if ( auth(s, v4) )
+  scanf("%s", &s);
+  if ( auth(s, value) )
     return 1;
   puts("Authenticated!");
   system("/bin/sh");
