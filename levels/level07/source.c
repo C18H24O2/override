@@ -58,9 +58,7 @@ int main(int argc, const char **argv, const char **envp)
     unsigned char data[400];
     int result;
     char cmd[4];
-    unsigned int canary;
 
-    canary = __readgsdword(0x14);
     result = 0;
     *(int *)cmd = 0;
     memset(data, 0, sizeof(data));
