@@ -17,8 +17,8 @@ int verify_user_pass(const void *a1)
 
 int main(int argc, const char **argv, const char **envp)
 {
-  char s[64]; // [esp+1Ch] [ebp-4Ch] BYREF
-  int v5; // [esp+5Ch] [ebp-Ch]
+  char s[64];
+  int v5;
 
   memset(s, 0, sizeof(s));
   v5 = 0;
